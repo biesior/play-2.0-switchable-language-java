@@ -1,0 +1,34 @@
+# Override default Play's validation messages
+
+# --- Constraints
+constraint.required=Obligatorisch
+constraint.min=Minimaler Wert: {0}
+constraint.max=Maximaler Wert: {0}
+constraint.minLength=Minimale Länge: {0}
+constraint.maxLength=Maximale Länge: {0}
+constraint.email=E-Mail
+
+# --- Formats
+format.date=Datum (''{0}'')
+format.numeric=Numerisch
+format.real=Reelle Zahl
+
+# --- Errors
+error.invalid=Wert is unzulässig
+error.required=Dieses Feld ist obligatorisch
+error.number=Numerischer Wert erwartet
+error.real=Reelle Zahl erwartet
+error.min=Muss größer oder gleich {0} sein
+error.max=Muss kleiner oder gleich {0} sein
+error.minLength=Die minimale Länge beträgt {0}
+error.maxLength=Die maximale Länge beträgt {0}
+error.email=Valide E-Mail-Adresse erforderlich
+error.pattern=Muss dem Muster {0} genügen
+
+
+ellou=Wilkommen!
+language.select=Sprache wählen
+language.current=Gegenwärtig
+language.change=Ändern
+
+input.coffeeName=Kaffee Namen

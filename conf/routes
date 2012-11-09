@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+POST    /                           controllers.Application.submit
+
+
+# --- Language class routes START
+GET     /language/:code/*returnpath     controllers.Language.changeLanguage(code: String, returnpath:String)
+GET     /language/:code/                controllers.Language.changeLanguageHome(code: String)
+# --- Language class routes END
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

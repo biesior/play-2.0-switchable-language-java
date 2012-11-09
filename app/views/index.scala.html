@@ -1,0 +1,45 @@
+@(coffeeForm: Form[Coffee])
+
+@main(Language.message("ellou") + " - Play 2.0") {
+    
+<h1>@Language.message("ellou")</h1>
+<div><b>@Language.message("language.select") ...</b></div>
+
+
+<!-- Object of the currently selected language -->
+<div>
+    @defining(Language.currentLanguageItem()) {currentLang =>
+        @Language.message("language.current"):  @currentLang.name  (@currentLang.code)
+    }
+</div>
+
+<!-- other languages (without current) -->
+<div>
+    @Language.message("language.change"):
+    @for(lang <- Language.otherLanguageItems()){
+        <a href="@lang.switchUrl">@lang.name</a>
+    }
+</div>
+
+<!-- Does it work with form's constraints? Yes, but... manually ...-->
+<!-- There is a problem with errors, don't know why, if it's important to you can maintain it with flash scope from your controller -->
+
+<div>
+    @helper.form(routes.Application.submit){
+        @helper.inputText(
+            coffeeForm("name"),
+            '_label -> Language.message("input.coffeeName"),
+            '_help ->  { Language.message("constraint.required") + ", " + Language.message("constraint.minLength", "5") },
+            '_showErrors -> false
+        )
+        <input type="submit">
+    }
+
+</div>
+
+
+
+
+
+    
+}
